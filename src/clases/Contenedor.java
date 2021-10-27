@@ -12,6 +12,7 @@ y como maximo puede haber en espera 10 vectores pendientes.
 Maximo 10 vectores
  */
 
+//Esta clase sirve como punto de sincronizacion y guarda la lista de datos
 import java.util.ArrayList;
 
 public class Contenedor {
@@ -29,10 +30,10 @@ public class Contenedor {
         return dato;
     }
 
-    public boolean maximoAlcanzado(){
+    synchronized public boolean maximoAlcanzado(){
         return datos.size()>=MAXIMO_ALCANZADO;
     }
-    public boolean listVacia(){
+    synchronized public boolean listVacia(){
         return datos.isEmpty();
     }
 

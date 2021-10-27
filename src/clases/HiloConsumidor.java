@@ -5,7 +5,7 @@ public class HiloConsumidor implements Runnable{
 
     private final Contenedor DATOS;
 
-    public HiloConsumidor(Contenedor datos){
+    public HiloConsumidor(Contenedor datos, String miNombre){
         this.DATOS=datos;
     }
 
@@ -26,7 +26,12 @@ public class HiloConsumidor implements Runnable{
         }
     }
     private void consumirDatos(int[] vector){
-
         //mostrar en pantalla la suma de los arrays
+        int sumaTotal=0;
+        for (int i = 0; i < 100; i++) {
+            sumaTotal+=vector[i];
+        }
+        System.out.println("El total del array es: "+sumaTotal);
+
     }
 }
